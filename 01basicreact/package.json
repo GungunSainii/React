@@ -12,18 +12,18 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start", //Dev environment mai project ko run ke liye
+    "build": "react-scripts build", //html css js generate by build 
+    "test": "react-scripts test", // to test
+    "eject": "react-scripts eject" //when we need to eject the use of react ab 
   },
-  "eslintConfig": {
+  "eslintConfig": { //format checker
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
-  "browserslist": {
+  "browserslist": { 
     "production": [
       ">0.2%",
       "not dead",
