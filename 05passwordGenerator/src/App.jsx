@@ -14,16 +14,15 @@ function App() {
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-    if (numberAllowed) str += "0123456789"
+    if (numberAllowed) str += "0123456789" 
     if (charAllowed) str += "!@#$%^&*-_+=[]{}~`"
 
-    for (let i = 1; i <= length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1)
+    for (let i = 1; i <= length; i++) { 
+      let char = Math.floor(Math.random() * str.length + 1) //So that atleast we don't get zero value 
       pass += str.charAt(char)
-      
     }
 
-    setPassword(pass)
+    setPassword(pass) 
 
 
   }, [length, numberAllowed, charAllowed, setPassword])
@@ -97,3 +96,7 @@ function App() {
 }
 
 export default App
+/*
+useCallback(fxn,dependencies) --> Call useCallback is a react hook that lets you cache(memory) a function definition between re-renders
+dependencies - array jo variables pe effect aa raha hai vo pass kr digyeye 
+ */

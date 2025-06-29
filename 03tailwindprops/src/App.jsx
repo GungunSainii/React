@@ -15,10 +15,11 @@ function App() {
   return (
     <>
       <h1 className='bg-green-400 text-black p-4 rounded-xl mb-4'>Tailwind test</h1>
-      <Card username="chaiaurcode" btnText="click me" />
+      <Card username="chaiaurcode" btnText="click me" /> 
       <Card username="hitesh" />
     </>
   )
 }
 
 export default App
+//<card channel="chai" someObj=myObj Nope-- /> --> AS myObj in createroot passed as a variable not as obbject directly So use {}
