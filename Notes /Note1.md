@@ -102,6 +102,17 @@ A change in the data used to render a React app. Usually the result of `setState
 
 ##First project
 - Background Changer 
+- Learnt : useState() , onClick pe common error
 
 ##UseEffect, UseRef and UseCall
 - Password Generator 
+- useCallback(),useEffect(), useRef(), clipboard copy ? 
+
+##Currency Convertor
+- REmarkable component reuseability
+- API calling 
+- Creation of hooks
+- Creation of components and hooks in separate folders.
+- Good practise: create a index.js file to import and export the function for Big Band projects 
+- useId():useId is a React Hook for generating unique IDs that can be passed to accessibility attributes.
+

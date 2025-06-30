@@ -14,7 +14,8 @@ function InputBox({
    const amountInputId = useId()
 
     return (
-        <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
+        <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}> //A little special css using Java and 
+        //also we can inject the css given by the user 
             <div className="w-1/2">
                 <label htmlFor={amountInputId}  className="text-black/40 mb-2 inline-block">
                     {label}
@@ -26,7 +27,7 @@ function InputBox({
                     placeholder="Amount"
                     disabled={amountDisable}
                     value={amount}
-                    onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
+                    onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))} //&& --> if the var 1 exists then do that
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
@@ -38,7 +39,7 @@ function InputBox({
                     disabled={currencyDisable}
                 >
                     
-                        {currencyOptions.map((currency) => (
+                        {currencyOptions.map((currency) => ( //SYNTAX !!
                             <option key={currency} value={currency}>
                             {currency}
                             </option>

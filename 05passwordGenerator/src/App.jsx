@@ -1,17 +1,17 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 
-
-
 function App() {
   const [length, setLength] = useState(8)
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false)
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("") 
 
-  //useRef hook
+
+
+  //useRef hook --> Ref hook to take ref we use useRef hook
   const passwordRef = useRef(null)
 
-  const passwordGenerator = useCallback(() => {
+  const passwordGenerator = useCallback(() => { //It optimise the code 
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     if (numberAllowed) str += "0123456789" 
@@ -25,15 +25,15 @@ function App() {
     setPassword(pass) 
 
 
-  }, [length, numberAllowed, charAllowed, setPassword])
+  }, [length, numberAllowed, charAllowed, setPassword]) //dependencies that the fxn repeat itself 
 
-  const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 999);
-    window.navigator.clipboard.writeText(password)
+  const copyPasswordToClipboard = useCallback(() => { 
+    passwordRef.current?.select(); //to increase the UI ?{indicate optional select}
+    passwordRef.current?.setSelectionRange(0, 999);//to define the range of input 
+    window.navigator.clipboard.writeText(password) //to select the text in input button
   }, [password])
 
-  useEffect(() => {
+  useEffect(() => { //Sync the changes Re render the fxn according to dependencies 
     passwordGenerator()
   }, [length, numberAllowed, charAllowed, passwordGenerator])
   return (
@@ -63,7 +63,7 @@ function App() {
         max={100}
         value={length}
          className='cursor-pointer'
-         onChange={(e) => {setLength(e.target.value)}}
+         onChange={(e) => {setLength(e.target.value)}} //event prop of reeact tells react to run this fxn whenever input value changes 
           />
           <label>Length: {length}</label>
       </div>
@@ -84,7 +84,7 @@ function App() {
               defaultChecked={charAllowed}
               id="characterInput"
               onChange={() => {
-                  setCharAllowed((prev) => !prev )
+                  setCharAllowed((prev) => !prev ) //Most common logic to toggle the values 
               }}
           />
           <label htmlFor="characterInput">Characters</label>
@@ -98,5 +98,8 @@ function App() {
 export default App
 /*
 useCallback(fxn,dependencies) --> Call useCallback is a react hook that lets you cache(memory) a function definition between re-renders
-dependencies - array jo variables pe effect aa raha hai vo pass kr digyeye 
+dependencies - array jisme vo variables pe effect aa raha hai vo pass kr digyeye 
+ */
+/*
+
  */
